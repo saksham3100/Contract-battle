@@ -1,0 +1,20 @@
+# Compiler files
+cache/
+out/
+
+# Forge dependencies
+lib/
+
+# Testing
+*.t.sol.example
+
+# Environment
+.env
+.env.example
+
+# Idea and editor files
+.idea/
+.vscode/
+
+test-secrets/
+docker/

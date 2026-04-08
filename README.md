@@ -5,8 +5,6 @@
 <!-- LEADERBOARD_START -->
 | Rank | Player | Highest Level | Timestamp (UTC) |
 |------|-------|---------------|-----------------|
-| 1 | Rohan-droid7341 | 4 | 2026-04-08 11:21:19 |
-| 2 | chiragshirsath | 1 | 2026-04-08 11:31:44 |
 <!-- LEADERBOARD_END -->
 
 ---

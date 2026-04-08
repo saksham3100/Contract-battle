@@ -8,14 +8,10 @@ pragma solidity ^0.8.19;
 contract GalacticRegistry {
 
     // 1. DATA STORAGE
-    // Create a mapping that links an address to a string (the Pilot Name)
     mapping(address => string) public registry;
-
-    // Create a mapping that links an address to a boolean (to track if they already registered)
     mapping(address => bool) public hasRegistered;
 
     // 2. EVENTS
-    // This event must be emitted when a registration is successful
     event Registered(address indexed pilot, string name);
 
     /**
@@ -24,24 +20,15 @@ contract GalacticRegistry {
      */
     function register(string memory _name) public {
         // --- STEP 1: VALIDATION ---
-        // REQUIRE: The name must not be an empty string ""
-        // Hint: bytes(_name).length should be greater than 0
-        
-
-        // REQUIRE: The msg.sender must NOT have registered before
-        // Check your 'hasRegistered' mapping
-        
+        require(bytes(_name).length > 0, "Name cannot be empty");
+        require(!hasRegistered[msg.sender], "Already registered");
 
         // --- STEP 2: STATE UPDATES ---
-        // Update the 'registry' mapping for msg.sender with _name
-        
-
-        // Update the 'hasRegistered' mapping for msg.sender to true
-        
+        registry[msg.sender] = _name;
+        hasRegistered[msg.sender] = true;
 
         // --- STEP 3: EMIT EVENT ---
-        // Emit the Registered event with the sender and the name
-        
+        emit Registered(msg.sender, _name);
     }
 
     /**

@@ -18,3 +18,4 @@ lib/
 
 test-secrets/
 docker/
+*_solution.sol
